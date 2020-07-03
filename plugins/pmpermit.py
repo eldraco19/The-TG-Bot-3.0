@@ -15,10 +15,7 @@ TG_COMPANION_USER_BOT = "```Wait for my masters response.\nDo not spam his pm if
 THETGBOT_USER_BOT_WARN_ZERO = "```Blocked! Thanks for the spam.```"
 THETGBOT_USER_BOT_NO_WARN = "\
 ```Bleep blop! This is a bot. Don't fret.\
-\nMy master hasn't approved you to PM.\
-\nPlease wait for my master to look in, he mostly approves PMs.\
-\nAs far as I know, he doesn't usually approve retards though.\
-\nIf you continue sending messages you will be blocked.```\
+\nMy master is offline right now.```\
 "
 
 
@@ -51,7 +48,7 @@ async def monito_p_m_s(event):
                     await bot.storage.PREV_REPLY_MESSAGE[chat.id].delete()
                 bot.storage.PREV_REPLY_MESSAGE[chat.id] = r
                 return
-            r = await event.reply(f"{THETGBOT_USER_BOT_NO_WARN}\n`Messages remaining: {int(Config.MAX_PM_FLOOD - bot.storage.PM_WARNS[chat.id])}`")
+            r = await event.reply(f"{THETGBOT_USER_BOT_NO_WARN}\n")
             bot.storage.PM_WARNS[chat.id] += 1
             if chat.id in bot.storage.PREV_REPLY_MESSAGE:
                 await bot.storage.PREV_REPLY_MESSAGE[chat.id].delete()
