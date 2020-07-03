@@ -199,7 +199,7 @@ async def _(event):
     botuser = f"\nUser: `@{botuser.username}\n"
     memory = psutil.virtual_memory()
     specs = f"`System: {uname.system}\nRelease: {uname.release}\nVersion: {uname.version}\nProcessor: {uname.processor}\nMemory [RAM]: {get_size(memory.total)}`"
-    help_string = f"**The-TG-Bot v3.0 is running.**\n\n**General Info:**\n`Build Version: {build} {botuser}`Github Repository: `{Config.GITHUB_REPO_LINK}\n\n**System Specifications:**\n{specs}\n```Python: {sys.version}```\n```Telethon: {__version__}"
+    help_string = f"**The-TG-Bot v3.0 is running.**\n\n**General Info:**\n`Build Version: {build} {botuser}`Github Repository: `{Config.GITHUB_REPO_LINK}\n\n**System Specifications:**\n{specs}\n```Python: {sys.version}```\n```Telethon: {__version__}```"
     await event.edit(help_string + "\n\n")
 
 
